@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - run: dotnet new console
-      - run: dotnet pack -p:Version=1.0.0+BuildMetadata
+      - run: dotnet pack -p:Version=1.1.1+BuildMetadata
       - run: |
           dotnet tool update gpr -g
           gpr push bin/Debug --repository ${{ github.repository }} -k ${{ github.token }}
