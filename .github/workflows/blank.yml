@@ -1,0 +1,13 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: dotnet new console
+      - run: dotnet pack
+      - run: |
+          dotnet tool update gpr -g
+          gpr push bin/Debug --repository ${{ github.repository }} -k ${{ github.token }}
