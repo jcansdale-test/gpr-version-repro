@@ -10,4 +10,4 @@ jobs:
       - run: dotnet pack
       - run: |
           dotnet tool update gpr -g
-          gpr push bin/Debug --repository ${{ github.repository }} --version 1.0.0-changed -k ${{ github.token }}
+          gpr push bin/Debug --repository ${{ github.repository }} --version 1.0.0-changed+BuildMetadata -k ${{ github.token }}
